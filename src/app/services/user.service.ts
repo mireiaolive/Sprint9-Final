@@ -29,4 +29,9 @@ export class UserService {
   logout() {
     return signOut(this.auth);
   }
+
+  isLoggedIn(): boolean {
+    const user = this.auth.currentUser;
+    return !!user; // Devuelve true si hay un usuario autenticado, de lo contrario, devuelve false
+  }
 }
