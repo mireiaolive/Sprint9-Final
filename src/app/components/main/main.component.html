@@ -1,1 +1,10 @@
-
+<div class="flex-container">
+  <div *ngFor="let release of releaseData" class="flex-item">
+    <img [src]="release.cover_image" alt="Release Image" />
+    <p>
+      <strong>{{ release.title }}</strong> by {{ release.artist }}
+      <strong>Format:</strong>{{ release.format }} in {{ release.year }},
+      {{ release.country }}. <strong>Genres:</strong>{{ release.genre }}
+    </p>
+  </div>
+</div>

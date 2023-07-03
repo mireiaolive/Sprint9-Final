@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from '../app/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  releaseData: any;
   constructor(public userService: UserService, private router: Router) {}
 
   isLoggedIn(): boolean {
@@ -18,7 +19,7 @@ export class AppComponent {
     this.userService
       .logout()
       .then(() => {
-        this.router.navigate(['/register']);
+        this.router.navigate(['/main']);
       })
       .catch((error) => console.log(error));
   }
