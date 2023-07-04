@@ -17,10 +17,10 @@ export class DiscogsService {
       Authorization: `Discogs key=${this.discogsApiKey}, secret=MDRwNaHPKbavUwquBsuZcbGtSDTLXfzY`,
     };
     const params = {
-      genre: ['electronic'],
+      genre: ['electronic', 'jazz', 'house'],
       sort: 'year',
       sort_order: 'desc',
-      per_page: '40',
+      per_page: '20',
     };
 
     return this.http.get(url, { headers, params });

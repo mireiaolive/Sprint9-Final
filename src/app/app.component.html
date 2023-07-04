@@ -1,6 +1,11 @@
 <div class="container-fluid p-0">
-  <nav class="navbar navbar-expand navbar-light bg-light">
+  <nav class="navbar navbar-expand navbar-light bg-light py-4">
     <div class="container-fluid w-100">
+      <img
+        src="../assets/logo.png"
+        alt="Logo de la aplicación"
+        class="navbar-brand"
+      />
       <ul class="navbar-nav ml-auto">
         <ng-container *ngIf="!userService.isLoggedIn()">
           <li class="nav-item">
@@ -22,5 +27,6 @@
       </ul>
     </div>
   </nav>
+
   <router-outlet></router-outlet>
 </div>

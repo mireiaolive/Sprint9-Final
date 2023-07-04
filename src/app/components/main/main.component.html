@@ -1,10 +1,42 @@
-<div class="flex-container">
-  <div *ngFor="let release of releaseData" class="flex-item">
-    <img [src]="release.cover_image" alt="Release Image" />
-    <p>
-      <strong>{{ release.title }}</strong> by {{ release.artist }}
-      <strong>Format:</strong>{{ release.format }} in {{ release.year }},
-      {{ release.country }}. <strong>Genres:</strong>{{ release.genre }}
-    </p>
+<div class="container-fluid">
+  <div
+    id="carouselExampleSlidesOnly"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="4000"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="../../../assets/carousel_1.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../../assets/carousel_2.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../../assets/carousel_3.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+    </div>
+  </div>
+  <div class="flex-container">
+    <div *ngFor="let release of releaseData" class="flex-item">
+      <img [src]="release.cover_image" alt="Release Image" />
+      <p>
+        <strong>{{ release.title }}</strong> by {{ release.artist }}
+        <strong>Format:</strong>{{ release.format }} in {{ release.year }},
+        {{ release.country }}. <strong>Genres:</strong>{{ release.genre }}
+      </p>
+    </div>
   </div>
 </div>
