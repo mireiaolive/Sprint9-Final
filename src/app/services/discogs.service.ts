@@ -20,7 +20,7 @@ export class DiscogsService {
       genre: ['electronic', 'jazz', 'house'],
       sort: 'year',
       sort_order: 'desc',
-      per_page: '20',
+      per_page: '21',
     };
 
     return this.http.get(url, { headers, params });
