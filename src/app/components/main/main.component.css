@@ -77,3 +77,65 @@ h3.text-left {
   font-weight: 600;
   text-decoration: none;
 }
+
+/* main.component.css */
+.footer {
+  background-color: #a136fd;
+  color: white;
+  padding: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-subscribe {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-subscribe h4 {
+  margin-bottom: 10px;
+}
+
+.subscribe-input {
+  display: flex;
+  align-items: center;
+}
+
+.subscribe-input input[type="email"] {
+  padding: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.subscribe-input button {
+  padding: 5px 10px;
+  background-color: #fff;
+  border: none;
+  color: #a136fd;
+}
