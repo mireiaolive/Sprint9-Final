@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sym-firebase-auth": {
+      "hosting": {
+        "final": [
+          "sym-firebase-auth"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sym-firebase-auth"
+  }
+}

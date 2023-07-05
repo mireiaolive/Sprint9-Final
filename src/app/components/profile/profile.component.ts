@@ -11,6 +11,7 @@ export class ProfileComponent {
   user: any;
   selectedImage: File | null = null;
   showImageModal: boolean = false;
+  imageUrl: string | null = null; // Variable para almacenar la URL de descarga de la imagen
 
   constructor(
     private userService: UserService,
@@ -21,6 +22,7 @@ export class ProfileComponent {
 
   uploadImage(event: any) {
     const file = event.target.files[0];
+    console.log(file);
     if (file) {
       this.selectedImage = file;
       this.showImageModal = true;
@@ -45,8 +47,7 @@ export class ProfileComponent {
         .uploadImage(this.selectedImage)
         .then((downloadUrl: string) => {
           console.log('Image uploaded:', downloadUrl);
-          // Handle the download URL or update the user's profile with the image URL
-          // (e.g., save it to Firebase Firestore or update the user's profile in Firebase Auth)
+          this.imageUrl = downloadUrl; // Asignar la URL de descarga a la variable imageUrl
         })
         .catch((error: any) => {
           console.error('Image upload failed:', error);

@@ -2,12 +2,26 @@
   position: relative;
   width: 250px;
   height: 250px;
-
   background-color: rgb(220, 219, 219);
 }
+
+.square img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.square.with-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .fa-camera {
   position: absolute;
   top: 36%;
   left: 42%;
   font-size: 45px;
+  cursor: pointer;
 }

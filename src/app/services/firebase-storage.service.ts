@@ -14,8 +14,8 @@ export class FirebaseStorageService {
 
   uploadImage(image: File): Promise<string> {
     const storageRef = ref(this.storage, 'profile_images/' + image.name);
-    return uploadBytes(storageRef, image).then(() => {
-      return getDownloadURL(storageRef);
+    return uploadBytes(storageRef, image).then((snapshot) => {
+      return getDownloadURL(snapshot.ref);
     });
   }
 }
