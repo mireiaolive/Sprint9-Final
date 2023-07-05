@@ -9,6 +9,7 @@ import { DiscogsService } from '../../services/discogs.service';
 export class MainComponent implements OnInit {
   releaseData: any[] = [];
   isDataLoaded: boolean = false;
+  hoveredReleaseIndex: number = -1;
 
   constructor(private discogsService: DiscogsService) {}
 
