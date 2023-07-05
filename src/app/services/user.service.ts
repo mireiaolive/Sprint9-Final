@@ -6,6 +6,7 @@ import {
   signOut,
   signInWithPopup,
   GoogleAuthProvider,
+  updateProfile,
 } from '@angular/fire/auth';
 
 @Injectable({
@@ -14,8 +15,13 @@ import {
 export class UserService {
   constructor(private auth: Auth) {}
 
-  register({ email, password }: any) {
-    return createUserWithEmailAndPassword(this.auth, email, password);
+  register({ email, password, username }: any) {
+    return createUserWithEmailAndPassword(this.auth, email, password).then(
+      (userCredential) => {
+        const user = userCredential.user;
+        return updateProfile(user, { displayName: username });
+      }
+    );
   }
 
   login({ email, password }: any) {
@@ -32,6 +38,18 @@ export class UserService {
 
   isLoggedIn(): boolean {
     const user = this.auth.currentUser;
-    return !!user; // Devuelve true si hay un usuario autenticado, de lo contrario, devuelve false
+    return !!user;
+  }
+
+  getCurrentUser(): any {
+    const user = this.auth.currentUser;
+    if (user) {
+      return {
+        username: user.displayName,
+        email: user.email,
+      };
+    } else {
+      return null;
+    }
   }
 }

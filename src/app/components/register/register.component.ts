@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
     this.formReg = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
+      username: new FormControl(),
     });
   }
 
@@ -23,8 +24,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.userService
       .register(this.formReg.value)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
         this.router.navigate(['login']);
       })
       .catch((error) => console.log(error));

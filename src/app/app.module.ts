@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { MainComponent } from './components/main/main.component';
 import { UserService } from './services/user.service';
 import { DiscogsService } from './services/discogs.service';
+import { FirebaseStorageService } from './services/firebase-storage.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -31,7 +32,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
-  providers: [UserService, DiscogsService],
+  providers: [UserService, DiscogsService, FirebaseStorageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
