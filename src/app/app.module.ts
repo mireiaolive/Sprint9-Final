@@ -14,6 +14,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AlbumComponent } from './components/album/album.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     RegisterComponent,
     MainComponent,
     ProfileComponent,
+    AlbumComponent,
   ],
   imports: [
     BrowserModule,

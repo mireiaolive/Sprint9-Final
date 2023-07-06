@@ -57,9 +57,14 @@
     >
       <img [src]="release.cover_image" alt="Release Image" />
       <p>
-        <strong>{{ release.title }}</strong> by {{ release.artist }}
-        <strong>Format:</strong>{{ release.format }} in {{ release.year }},
-        {{ release.country }}. <strong>Genres:</strong>{{ release.genre }}
+        <strong>
+          <a [routerLink]="'/album/' + generateSlug(release.title)">{{
+            release.title
+          }}</a>
+        </strong>
+        by {{ release.artist }} <strong>Format:</strong>{{ release.format }} in
+        {{ release.year }}, {{ release.country }}. <strong>Genres:</strong
+        >{{ release.genre }}
       </p>
       <div class="buttons" *ngIf="hoveredReleaseIndex === i">
         <a href="#" class="button">
@@ -96,7 +101,7 @@
       </div>
     </div>
     <div class="footer-subscribe">
-      <h1>Subscribe to our Newsletter</h1>
+      <h1 class="newletter">Subscribe to our Newsletter</h1>
       <div class="subscribe-input">
         <input type="email" placeholder="Enter your email address" />
         <button>Subscribe</button>

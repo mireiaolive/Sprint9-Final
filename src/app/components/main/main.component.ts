@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DiscogsService } from '../../services/discogs.service';
+import slugify from 'slugify';
 
 @Component({
   selector: 'app-main',
@@ -30,5 +31,9 @@ export class MainComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  generateSlug(title: string): string {
+    return slugify(title, { lower: true, strict: true });
   }
 }

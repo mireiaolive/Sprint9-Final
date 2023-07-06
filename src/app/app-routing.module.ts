@@ -4,6 +4,8 @@ import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AlbumComponent } from './components/album/album.component';
+
 import {
   canActivate,
   redirectLoggedInTo,
@@ -20,6 +22,7 @@ const routes: Routes = [
     component: ProfileComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
+  { path: 'album/:title', component: AlbumComponent },
 ];
 
 @NgModule({
