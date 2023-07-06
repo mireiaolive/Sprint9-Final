@@ -25,6 +25,15 @@
   overflow: auto;
 }
 
+.flex-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.flex-item a:hover {
+  text-decoration: underline;
+}
+
 img {
   width: 150px;
   height: 150px;
