@@ -58,13 +58,10 @@
       <img [src]="release.cover_image" alt="Release Image" />
       <p>
         <strong>
-          <a [routerLink]="'/album/' + generateSlug(release.title)">{{
-            release.title
-          }}</a>
+          <a (click)="goToAlbum(release.id)">{{ release.title }}</a>
         </strong>
-        by {{ release.artist }} <strong>Format:</strong>{{ release.format }} in
-        {{ release.year }}, {{ release.country }}. <strong>Genres:</strong
-        >{{ release.genre }}
+        <strong> Format: </strong>{{ release.format }} in {{ release.year }},
+        {{ release.country }}. <strong>Genres: </strong>{{ release.genre }}
       </p>
       <div class="buttons" *ngIf="hoveredReleaseIndex === i">
         <a href="#" class="button">

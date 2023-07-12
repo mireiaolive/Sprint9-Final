@@ -22,7 +22,7 @@ const routes: Routes = [
     component: ProfileComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
-  { path: 'album/:title', component: AlbumComponent },
+  { path: 'album/:releaseId', component: AlbumComponent },
 ];
 
 @NgModule({

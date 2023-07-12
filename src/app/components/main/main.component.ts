@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DiscogsService } from '../../services/discogs.service';
-import slugify from 'slugify';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
   isDataLoaded: boolean = false;
   hoveredReleaseIndex: number = -1;
 
-  constructor(private discogsService: DiscogsService) {}
+  constructor(private discogsService: DiscogsService, private router: Router) {}
 
   ngOnInit() {
     if (!this.isDataLoaded) {
@@ -33,7 +33,9 @@ export class MainComponent implements OnInit {
     );
   }
 
-  generateSlug(title: string): string {
-    return slugify(title, { lower: true, strict: true });
+  goToAlbum(releaseId: string) {
+    if (releaseId) {
+      this.router.navigateByUrl(`/album/${releaseId}`);
+    }
   }
 }

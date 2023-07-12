@@ -1,1 +1,13 @@
-<p>album works!</p>
+<div *ngIf="releaseDetails">
+  <h2>{{ releaseDetails.title }}</h2>
+  <p>Artista: {{ releaseDetails.artists[0].name }}</p>
+  <p>Formato: {{ releaseDetails.formats[0].name }}</p>
+  <p>Año: {{ releaseDetails.year }}</p>
+  <p>País: {{ releaseDetails.country }}</p>
+  <p>Géneros: {{ releaseDetails.genres.join(", ") }}</p>
+  <!-- Otros detalles del lanzamiento según sea necesario -->
+</div>
+
+<div *ngIf="!releaseDetails">
+  <p>Cargando información del lanzamiento...</p>
+</div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,16 +13,26 @@ export class DiscogsService {
 
   getLatestReleases(): Observable<any> {
     const url = `${this.discogsApiUrl}/database/search`;
-    const headers = {
+    const headers = new HttpHeaders({
       Authorization: `Discogs key=${this.discogsApiKey}, secret=MDRwNaHPKbavUwquBsuZcbGtSDTLXfzY`,
-    };
-    const params = {
-      genre: ['electronic', 'jazz', 'house'],
-      sort: 'year',
-      sort_order: 'desc',
-      per_page: '21',
-    };
+    });
+
+    const params = new HttpParams()
+      .set('genre', 'electronic')
+      .set('type', 'release')
+      .set('sort', 'year')
+      .set('sort_order', 'desc')
+      .set('per_page', '21');
 
     return this.http.get(url, { headers, params });
+  }
+
+  getReleaseDetails(releaseId: string): Observable<any> {
+    const url = `${this.discogsApiUrl}/releases/${releaseId}`;
+    const headers = new HttpHeaders({
+      Authorization: `Discogs key=${this.discogsApiKey}`,
+    });
+
+    return this.http.get(url, { headers });
   }
 }
