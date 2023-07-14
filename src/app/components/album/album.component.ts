@@ -28,11 +28,9 @@ export class AlbumComponent implements OnInit {
         console.log(data);
         this.releaseDetails = data;
 
-        // Obtener las URLs de las imágenes
         const releaseImageUrls =
           data.images?.map((image: any) => image.uri) || [];
 
-        // Asignar las URLs de las imágenes a la propiedad releaseImagesUrls
         this.releaseImageUrls = releaseImageUrls;
       },
       (error) => {
