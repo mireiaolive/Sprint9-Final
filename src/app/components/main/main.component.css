@@ -17,7 +17,7 @@
 
 .flex-item {
   position: relative;
-  width: 180px;
+  width: 200px;
   flex: 0 0 180px;
   text-align: left;
   line-height: 1.5;

@@ -9,7 +9,8 @@ import { DiscogsService } from '../../services/discogs.service';
 })
 export class AlbumComponent implements OnInit {
   releaseId: string = '';
-  releaseDetails: any;
+  releaseDetails: any = {};
+  releaseImageUrls: string[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,10 +27,21 @@ export class AlbumComponent implements OnInit {
       (data: any) => {
         console.log(data);
         this.releaseDetails = data;
+
+        // Obtener las URLs de las imágenes
+        const releaseImageUrls =
+          data.images?.map((image: any) => image.uri) || [];
+
+        // Asignar las URLs de las imágenes a la propiedad releaseImagesUrls
+        this.releaseImageUrls = releaseImageUrls;
       },
       (error) => {
         console.log(error);
       }
     );
+  }
+
+  getFullImageUrl(image: any): string {
+    return `https://img.discogs.com/${image.uri}`;
   }
 }

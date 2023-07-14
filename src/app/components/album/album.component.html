@@ -1,13 +1,29 @@
-<div *ngIf="releaseDetails">
-  <h2>{{ releaseDetails.title }}</h2>
-  <p>Artista: {{ releaseDetails.artists[0].name }}</p>
-  <p>Formato: {{ releaseDetails.formats[0].name }}</p>
-  <p>Año: {{ releaseDetails.year }}</p>
-  <p>País: {{ releaseDetails.country }}</p>
-  <p>Géneros: {{ releaseDetails.genres.join(", ") }}</p>
-  <!-- Otros detalles del lanzamiento según sea necesario -->
-</div>
+<div class="album-details">
+  <div class="banner py-0">
+    <img src="../../../assets/bernd-dittrich-JEqOpiM2vLU-unsplash.jpg" alt="" />
+  </div>
+  <div class="album-info d-flex">
+    <div *ngIf="releaseDetails.artists">
+      <h2>{{ releaseDetails.title }}</h2>
+      <p>Artista: {{ releaseDetails.artists[0].name }}</p>
+      <p>Formato: {{ releaseDetails.formats[0].name }}</p>
+      <p>Año: {{ releaseDetails.year }}</p>
+      <p>País: {{ releaseDetails.country }}</p>
+      <p>Géneros: {{ releaseDetails.genres.join(", ") }}</p>
+    </div>
+  </div>
+  <div
+    *ngIf="releaseDetails.images && releaseDetails.images.length > 0"
+    class="d-flex release-images"
+  >
+    <div *ngFor="let image of releaseDetails.images">
+      <img [src]="image.uri" alt="Release Image" />
+    </div>
+  </div>
 
-<div *ngIf="!releaseDetails">
-  <p>Cargando información del lanzamiento...</p>
+  <div class="album-description">
+    <p>{{ releaseDetails.notes }}</p>
+  </div>
+
+  <div class="music-player"></div>
 </div>

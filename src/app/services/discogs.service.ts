@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class DiscogsService {
   private discogsApiKey = 'mQEnlQEdgWyiTFoxmRxX';
   private discogsApiUrl = 'https://api.discogs.com';
+  private accessToken = 'MDRwNaHPKbavUwquBsuZcbGtSDTLXfzY';
 
   constructor(private http: HttpClient) {}
 
@@ -28,11 +29,22 @@ export class DiscogsService {
   }
 
   getReleaseDetails(releaseId: string): Observable<any> {
-    const url = `${this.discogsApiUrl}/releases/${releaseId}`;
+    const releaseUrl = `${this.discogsApiUrl}/releases/${releaseId}`;
     const headers = new HttpHeaders({
-      Authorization: `Discogs key=${this.discogsApiKey}`,
+      'User-Agent': 'MyDiscogsApp/1.0', // Add your custom User-Agent header
+      'Content-Type': 'application/json', // Add Content-Type header if required
+      Accept: 'application/vnd.discogs.v2.0+json', // Set the API version you want to use
+      Authorization: `Discogs key=${this.discogsApiKey}, secret=MDRwNaHPKbavUwquBsuZcbGtSDTLXfzY`,
     });
 
-    return this.http.get(url, { headers });
+    return this.http.get(releaseUrl, { headers });
+  }
+
+  getReleaseImages(imageUrls: string[]): Observable<any[]> {
+    const observables: Observable<any>[] = imageUrls.map((url) =>
+      this.http.get(url)
+    );
+
+    return forkJoin(observables);
   }
 }

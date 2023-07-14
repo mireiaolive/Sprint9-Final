@@ -1,0 +1,36 @@
+.album-details {
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  width: 60%;
+  height: 100vh;
+}
+
+.banner img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.album-info {
+  padding: 10px;
+}
+
+.album-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.album-info p {
+  margin-bottom: 5px;
+}
+
+.album-description {
+  margin-top: 20px;
+}
+
+.release-images img {
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+}
