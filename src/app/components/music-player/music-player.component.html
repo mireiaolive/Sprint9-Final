@@ -1,0 +1,15 @@
+<div class="music-player">
+  <mat-slider [min]="0" [max]="100" [value]="currentProgress"></mat-slider>
+  <div class="controls">
+    <button mat-icon-button (click)="previousTrack()">
+      <mat-icon>skip_previous</mat-icon>
+    </button>
+    <button mat-icon-button (click)="togglePlayback()">
+      <mat-icon>{{ isPlaying ? "pause" : "play_arrow" }}</mat-icon>
+    </button>
+    <button mat-icon-button (click)="nextTrack()">
+      <mat-icon>skip_next</mat-icon>
+    </button>
+  </div>
+  <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+</div>

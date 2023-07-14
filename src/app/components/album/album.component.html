@@ -28,7 +28,7 @@
     <p>{{ releaseDetails.notes }}</p>
   </div>
 
-  <div class="music-player">
+  <div class="music-player d-flex">
     <div class="tracklist">
       <div *ngFor="let track of releaseDetails.tracklist" class="track d-flex">
         <div class="play-icon" (click)="playTrack(track)">
@@ -40,5 +40,6 @@
         </div>
       </div>
     </div>
+    <app-music-player></app-music-player>
   </div>
 </div>

@@ -21,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule } from '@angular/material/list';
+import { MusicPlayerComponent } from './components/music-player/music-player.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
     MainComponent,
     ProfileComponent,
     AlbumComponent,
+    MusicPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatProgressBarModule,
     MatListModule,
+    FormsModule,
   ],
   providers: [UserService, DiscogsService, FirebaseStorageService],
   bootstrap: [AppComponent],
