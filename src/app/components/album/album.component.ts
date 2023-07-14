@@ -44,4 +44,17 @@ export class AlbumComponent implements OnInit {
   getFullImageUrl(image: any): string {
     return `https://img.discogs.com/${image.uri}`;
   }
+
+  playTrack(track: any) {
+    track.isPlaying = !track.isPlaying;
+
+    // Implement your logic to play or pause the track here
+    if (track.isPlaying) {
+      // Play the track
+      console.log('Playing track:', track.title);
+    } else {
+      // Pause the track
+      console.log('Pausing track:', track.title);
+    }
+  }
 }

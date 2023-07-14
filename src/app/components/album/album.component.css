@@ -1,6 +1,5 @@
 .album-details {
-  background-color: black;
-  color: white;
+  color: black;
   margin: 0 auto;
   width: 60%;
   height: 100vh;
@@ -33,4 +32,14 @@
   padding: 10px;
   width: 200px;
   height: 200px;
+}
+
+.play-icon {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.duration {
+  padding-left: 6px;
+  color: gray;
 }

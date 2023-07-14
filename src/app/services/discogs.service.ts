@@ -31,9 +31,9 @@ export class DiscogsService {
   getReleaseDetails(releaseId: string): Observable<any> {
     const releaseUrl = `${this.discogsApiUrl}/releases/${releaseId}`;
     const headers = new HttpHeaders({
-      'User-Agent': 'MyDiscogsApp/1.0', // Add your custom User-Agent header
-      'Content-Type': 'application/json', // Add Content-Type header if required
-      Accept: 'application/vnd.discogs.v2.0+json', // Set the API version you want to use
+      'User-Agent': 'MyDiscogsApp/1.0',
+      'Content-Type': 'application/json',
+      Accept: 'application/vnd.discogs.v2.0+json',
       Authorization: `Discogs key=${this.discogsApiKey}, secret=MDRwNaHPKbavUwquBsuZcbGtSDTLXfzY`,
     });
 

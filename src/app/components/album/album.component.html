@@ -2,6 +2,7 @@
   <div class="banner py-0">
     <img src="../../../assets/bernd-dittrich-JEqOpiM2vLU-unsplash.jpg" alt="" />
   </div>
+
   <div class="album-info d-flex">
     <div *ngIf="releaseDetails.artists">
       <h2>{{ releaseDetails.title }}</h2>
@@ -12,6 +13,7 @@
       <p>Géneros: {{ releaseDetails.genres.join(", ") }}</p>
     </div>
   </div>
+
   <div
     *ngIf="releaseDetails.images && releaseDetails.images.length > 0"
     class="d-flex release-images"
@@ -25,5 +27,17 @@
     <p>{{ releaseDetails.notes }}</p>
   </div>
 
-  <div class="music-player"></div>
+  <div class="music-player">
+    <div class="tracklist">
+      <div *ngFor="let track of releaseDetails.tracklist" class="track d-flex">
+        <div class="play-icon" (click)="playTrack(track)">
+          <mat-icon>{{ track.isPlaying ? "pause" : "play_arrow" }}</mat-icon>
+        </div>
+        <div class="track-info d-flex">
+          <p class="title">{{ track.title }}</p>
+          <p class="duration">{{ track.duration }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
