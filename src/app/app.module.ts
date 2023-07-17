@@ -21,8 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule } from '@angular/material/list';
-import { MusicPlayerComponent } from './components/music-player/music-player.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -32,14 +32,13 @@ import { FormsModule } from '@angular/forms';
     MainComponent,
     ProfileComponent,
     AlbumComponent,
-    MusicPlayerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    //inicializacion conexión con firebase
+    // Inicialización conexión con Firebase
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     BrowserAnimationsModule,
@@ -49,6 +48,7 @@ import { FormsModule } from '@angular/forms';
     MatProgressBarModule,
     MatListModule,
     FormsModule,
+    RouterModule,
   ],
   providers: [UserService, DiscogsService, FirebaseStorageService],
   bootstrap: [AppComponent],
