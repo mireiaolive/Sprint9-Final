@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DiscogsService } from '../../services/discogs.service';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -24,8 +24,8 @@ export class MainComponent implements OnInit {
     this.discogsService.getLatestReleases().subscribe(
       (data: any) => {
         console.log(data);
-        this.releaseData = data.results || []; // Actualizar el array de resultados (manejar caso vacío)
-        this.isDataLoaded = true; // Marcar los datos como cargados
+        this.releaseData = data.results || [];
+        this.isDataLoaded = true;
       },
       (error) => {
         console.log(error);

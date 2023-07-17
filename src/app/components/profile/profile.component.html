@@ -8,6 +8,25 @@
       <img *ngIf="imageUrl" [src]="imageUrl" alt="Profile Image" />
     </div>
   </div>
+
+  <div class="row links-row">
+    <div class="links-container">
+      <a
+        routerLink="/collections"
+        routerLinkActive="active"
+        class="profile-link"
+      >
+        Collections
+      </a>
+      <a routerLink="/wish-list" routerLinkActive="active" class="profile-link">
+        Wish List
+      </a>
+      <a routerLink="/following" routerLinkActive="active" class="profile-link">
+        Following
+      </a>
+    </div>
+    <hr class="divider" />
+  </div>
 </div>
 
 <!-- Modal -->

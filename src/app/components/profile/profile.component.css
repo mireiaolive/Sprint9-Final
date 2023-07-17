@@ -25,3 +25,34 @@
   font-size: 45px;
   cursor: pointer;
 }
+
+.links-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.links-container {
+  display: flex;
+}
+
+.profile-link {
+  margin-right: 80px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.profile-link.active {
+  color: #a136fd;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: #a136fd;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
