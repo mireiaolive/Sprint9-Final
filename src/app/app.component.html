@@ -31,7 +31,10 @@
             >
           </li>
         </ng-container>
-        <li class="nav-item" *ngIf="userService.isLoggedIn()">
+        <li class="nav-item d-flex" *ngIf="userService.isLoggedIn()">
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active">
+            <i class="far fa-heart fa-2x"></i>
+          </a>
           <button (click)="onClick()" class="btn btn-outline-danger">
             logout
           </button>
