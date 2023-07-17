@@ -5,6 +5,7 @@ import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlbumComponent } from './components/album/album.component';
+import { SearchComponent } from './components/search/search.component'; // Importar el nuevo componente
 
 import {
   canActivate,
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'main', component: MainComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'search', component: SearchComponent },
   {
     path: 'profile',
     component: ProfileComponent,

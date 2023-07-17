@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-left">search results</h3>
+    </div>
+  </div>
+  <div class="row flex-container">
+    <div
+      *ngFor="let result of searchResults; let i = index"
+      class="flex-item"
+      (mouseover)="hoveredReleaseIndex = i"
+      (mouseout)="hoveredReleaseIndex = -1"
+      (click)="goToAlbum(result.id)"
+    >
+      <img [src]="result.cover_image" alt="Release Image" />
+      <p>
+        <strong>{{ result.title }}</strong
+        ><br />
+        <strong>Format:</strong> {{ result.format }} in {{ result.year }},
+        {{ result.country }}<br />
+        <strong>Genres:</strong> {{ result.genre }}
+      </p>
+      <div class="buttons" *ngIf="hoveredReleaseIndex === i">
+        <a href="#" class="button">
+          <i class="fas fa-shopping-cart"></i>
+          Buy Now
+        </a>
+        <a href="#" class="button">
+          <i class="far fa-heart"></i>
+          Wish List
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

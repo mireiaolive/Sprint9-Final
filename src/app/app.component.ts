@@ -32,20 +32,11 @@ export class AppComponent {
         console.log(error);
       });
   }
-
   search() {
     if (this.searchTerm) {
-      // Lógica para realizar la búsqueda en la API de Discogs utilizando el término de búsqueda
-      this.discogsService.search(this.searchTerm).subscribe(
-        (data: any) => {
-          // Manejo de los resultados de búsqueda
-          console.log(data);
-        },
-        (error: any) => {
-          // Manejo de errores
-          console.error(error);
-        }
-      );
+      this.router.navigate(['/search'], {
+        queryParams: { term: this.searchTerm },
+      });
     }
   }
 }

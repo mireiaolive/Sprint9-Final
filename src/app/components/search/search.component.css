@@ -1,0 +1,89 @@
+.carousel-item img {
+  height: 70vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+}
+
+.flex-container {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.flex-item {
+  position: relative;
+  width: 200px;
+  flex: 0 0 180px;
+  text-align: left;
+  line-height: 1.5;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.flex-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.flex-item a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+p {
+  margin: 10px 0 80px 0;
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+h3.text-left {
+  color: #a136fd;
+  width: 90vw;
+  text-align: left;
+  margin: 0 auto;
+  padding: 20px 20px 20px 20px;
+}
+
+.text-justify {
+  margin: 0 auto;
+  padding: 40px 0px 40px 0px;
+  width: 800px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+
+.container-fluid {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+  overflow-x: hidden;
+}
+
+.buttons {
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 45px;
+  left: 20px;
+}
+
+.buttons .button {
+  display: block;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+}

@@ -23,6 +23,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RouterModule } from '@angular/router';
     MainComponent,
     ProfileComponent,
     AlbumComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
