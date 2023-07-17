@@ -47,4 +47,18 @@ export class DiscogsService {
 
     return forkJoin(observables);
   }
+
+  search(searchTerm: string): Observable<any> {
+    const url = `${this.discogsApiUrl}/database/search`;
+    const headers = new HttpHeaders({
+      Authorization: `Discogs key=${this.discogsApiKey}, secret=${this.accessToken}`,
+    });
+
+    const params = new HttpParams()
+      .set('q', searchTerm)
+      .set('type', 'release')
+      .set('per_page', '10');
+
+    return this.http.get(url, { headers, params });
+  }
 }

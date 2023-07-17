@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../app/services/user.service';
+import { UserService } from './services/user.service';
+import { DiscogsService } from './services/discogs.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,13 @@ import { UserService } from '../app/services/user.service';
 })
 export class AppComponent {
   releaseData: any;
-  constructor(public userService: UserService, private router: Router) {}
+  searchTerm: string = '';
+
+  constructor(
+    public userService: UserService,
+    private router: Router,
+    private discogsService: DiscogsService
+  ) {}
 
   isLoggedIn(): boolean {
     return this.userService.isLoggedIn();
@@ -21,6 +28,24 @@ export class AppComponent {
       .then(() => {
         this.router.navigate(['/main']);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  search() {
+    if (this.searchTerm) {
+      // Lógica para realizar la búsqueda en la API de Discogs utilizando el término de búsqueda
+      this.discogsService.search(this.searchTerm).subscribe(
+        (data: any) => {
+          // Manejo de los resultados de búsqueda
+          console.log(data);
+        },
+        (error: any) => {
+          // Manejo de errores
+          console.error(error);
+        }
+      );
+    }
   }
 }

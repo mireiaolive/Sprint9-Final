@@ -1,11 +1,23 @@
 <div class="container-fluid p-0">
   <nav class="navbar navbar-expand navbar-light bg-light py-4">
     <div class="container-fluid w-100">
-      <img
-        src="../assets/logo.png"
-        alt="Logo de la aplicación"
-        class="navbar-brand"
-      />
+      <a class="navbar-brand" routerLink="/main">
+        <img src="../assets/logo.png" alt="Logo de la aplicación" />
+      </a>
+
+      <form class="form-inline ml-auto" (ngSubmit)="search()">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          [(ngModel)]="searchTerm"
+          name="searchTerm"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <mat-icon>search</mat-icon>
+        </button>
+      </form>
+
       <ul class="navbar-nav ml-auto">
         <ng-container *ngIf="!userService.isLoggedIn()">
           <li class="nav-item">
