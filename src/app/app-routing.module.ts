@@ -27,9 +27,9 @@ const routes: Routes = [
     component: ProfileComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
     children: [
-      { path: 'collections/:releaseId', component: CollectionsComponent },
-      { path: 'wishlist/:releaseId', component: WishlistComponent },
-      { path: 'following/:releaseId', component: FollowingComponent },
+      { path: 'collections/:releaseId?', component: CollectionsComponent },
+      { path: 'wishlist/:releaseId?', component: WishlistComponent },
+      { path: 'following/:releaseId?', component: FollowingComponent },
     ],
   },
   { path: 'album/:releaseId', component: AlbumComponent },

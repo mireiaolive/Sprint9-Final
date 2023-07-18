@@ -9,10 +9,10 @@
     </div>
   </div>
 
-  <div class="row links-row">
+  <div class="links-row">
     <div class="links-container">
       <a
-        [routerLink]="['/profile/collections', releaseId]"
+        [routerLink]="['/profile/collections/releaseId']"
         routerLinkActive="active"
         class="profile-link"
       >
@@ -20,7 +20,7 @@
         <span class="count">{{ collectionsCount }}</span>
       </a>
       <a
-        [routerLink]="['/profile/wishlist', releaseId]"
+        [routerLink]="['/profile/wishlist/releaseId']"
         routerLinkActive="active"
         class="profile-link"
       >
@@ -28,7 +28,7 @@
         <span class="count">{{ wishlistCount }}</span>
       </a>
       <a
-        [routerLink]="['/profile/following', releaseId]"
+        [routerLink]="['/profile/following/releaseId']"
         routerLinkActive="active"
         class="profile-link"
       >
@@ -36,8 +36,9 @@
         <span class="count">{{ followingCount }}</span>
       </a>
     </div>
-    <hr class="divider" />
   </div>
+  <hr class="divider" />
+  <router-outlet></router-outlet>
 </div>
 
 <!-- Modal -->

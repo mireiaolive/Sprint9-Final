@@ -40,17 +40,25 @@ export class MainComponent implements OnInit {
 
   goToAlbum(releaseId: string) {
     if (releaseId) {
-      this.router.navigateByUrl(`/album/${releaseId}`);
+      const clickedRelease = this.releaseData.find(
+        (release) => release.id === releaseId
+      );
+      if (clickedRelease) {
+        this.counterService.setClickedRelease(clickedRelease); // Establecer el clickedRelease seleccionado
+        this.router.navigateByUrl(`/album/${releaseId}`);
+      }
     }
   }
 
   handleBuyNowClick(release: any) {
-    this.counterService.incrementCollectionsCount(); // Incrementa el contador del servicio
+    this.counterService.incrementCollectionsCount();
+    this.counterService.setClickedRelease(release); // Establecer el clickedRelease seleccionado
     this.router.navigateByUrl(`/profile/collections/${release.id}`);
   }
 
   handleWishlistClick(release: any) {
-    this.counterService.incrementWishlistCount(); // Incrementa el contador del servicio
+    this.counterService.incrementWishlistCount();
+    this.counterService.setClickedRelease(release); // Establecer el clickedRelease seleccionado
     this.router.navigateByUrl(`/profile/wishlist/${release.id}`);
   }
 }

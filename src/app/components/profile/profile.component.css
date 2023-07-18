@@ -38,10 +38,16 @@
 }
 
 .profile-link {
+  width: 100px;
+  display: flex;
   margin-right: 80px;
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+
+.count {
+  margin-left: 5px;
 }
 
 .profile-link.active {

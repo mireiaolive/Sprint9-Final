@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { FirebaseStorageService } from '../../services/firebase-storage.service';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +14,6 @@ export class ProfileComponent {
   selectedImage: File | null = null;
   showImageModal: boolean = false;
   imageUrl: string | null = null;
-  releaseId: string | null = null;
 
   collections: any[] = [];
   wishlist: any[] = [];
@@ -23,6 +22,7 @@ export class ProfileComponent {
   collectionsCount: number = 0;
   wishlistCount: number = 0;
   followingCount: number = 0;
+  clickedRelease: any | null = null; // Usaremos clickedRelease para almacenar el release seleccionado
 
   constructor(
     private userService: UserService,
@@ -36,11 +36,12 @@ export class ProfileComponent {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      this.releaseId = params.get('releaseId');
-    });
     this.collectionsCount = this.counterService.getCollectionsCount();
     this.wishlistCount = this.counterService.getWishlistCount();
+    this.followingCount = this.counterService.getFollowingCount();
+
+    // Obtener el clickedRelease desde el CounterService
+    this.clickedRelease = this.counterService.getClickedRelease();
   }
 
   addToCollections(release: any) {

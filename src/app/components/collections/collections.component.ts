@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+// collections.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { CounterService } from '../../services/counter.service';
 
 @Component({
   selector: 'app-collections',
   templateUrl: './collections.component.html',
   styleUrls: ['./collections.component.css'],
 })
-export class CollectionsComponent {
-  releaseId: string | null = null;
+export class CollectionsComponent implements OnInit {
+  clickedReleaseId: string | null = null;
 
-  constructor(private route: ActivatedRoute) {
-    this.route.paramMap.subscribe((params) => {
-      this.releaseId = params.get('releaseId');
-    });
+  constructor(private counterService: CounterService) {}
+
+  ngOnInit() {
+    this.clickedReleaseId = this.counterService.getClickedReleaseId();
   }
 }

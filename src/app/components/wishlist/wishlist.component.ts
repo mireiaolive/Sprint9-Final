@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+// wishlist.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { CounterService } from '../../services/counter.service';
 
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css'],
 })
-export class WishlistComponent {
-  // Obtén la lista de releases agregados en el ProfileComponent
-  wishlist: any[] = []; // Puedes recibir esta lista desde el servicio o directamente del ProfileComponent
+export class WishlistComponent implements OnInit {
+  clickedReleaseId: string | null = null;
 
-  constructor() {}
+  constructor(private counterService: CounterService) {}
 
-  // Resto del código...
+  ngOnInit() {
+    this.clickedReleaseId = this.counterService.getClickedReleaseId();
+  }
 }
