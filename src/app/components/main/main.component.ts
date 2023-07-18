@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DiscogsService } from '../../services/discogs.service';
 import { Router } from '@angular/router';
+import { CounterService } from '../../services/counter.service';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +13,11 @@ export class MainComponent implements OnInit {
   isDataLoaded: boolean = false;
   hoveredReleaseIndex: number = -1;
 
-  constructor(private discogsService: DiscogsService, private router: Router) {}
+  constructor(
+    private discogsService: DiscogsService,
+    private router: Router,
+    private counterService: CounterService
+  ) {}
 
   ngOnInit() {
     if (!this.isDataLoaded) {
@@ -37,5 +42,15 @@ export class MainComponent implements OnInit {
     if (releaseId) {
       this.router.navigateByUrl(`/album/${releaseId}`);
     }
+  }
+
+  handleBuyNowClick(release: any) {
+    this.counterService.incrementCollectionsCount(); // Incrementa el contador del servicio
+    this.router.navigateByUrl(`/profile/collections/${release.id}`);
+  }
+
+  handleWishlistClick(release: any) {
+    this.counterService.incrementWishlistCount(); // Incrementa el contador del servicio
+    this.router.navigateByUrl(`/profile/wishlist/${release.id}`);
   }
 }

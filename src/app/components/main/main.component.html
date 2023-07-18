@@ -64,11 +64,14 @@
         {{ release.country }}. <strong>Genres: </strong>{{ release.genre }}
       </p>
       <div class="buttons" *ngIf="hoveredReleaseIndex === i">
-        <a href="#" class="button">
+        <a (click)="handleBuyNowClick(release)" class="button">
           <i class="fas fa-shopping-cart"></i>
           Buy Now
         </a>
-        <a href="#" class="button"> <i class="far fa-heart"></i>Wish List </a>
+
+        <a (click)="handleWishlistClick(release)" class="button">
+          <i class="far fa-heart"></i>Wish List
+        </a>
       </div>
     </div>
   </div>

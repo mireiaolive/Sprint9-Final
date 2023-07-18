@@ -12,17 +12,28 @@
   <div class="row links-row">
     <div class="links-container">
       <a
-        routerLink="/collections"
+        [routerLink]="['/profile/collections', releaseId]"
         routerLinkActive="active"
         class="profile-link"
       >
         collections
+        <span class="count">{{ collectionsCount }}</span>
       </a>
-      <a routerLink="/wish-list" routerLinkActive="active" class="profile-link">
+      <a
+        [routerLink]="['/profile/wishlist', releaseId]"
+        routerLinkActive="active"
+        class="profile-link"
+      >
         wish list
+        <span class="count">{{ wishlistCount }}</span>
       </a>
-      <a routerLink="/following" routerLinkActive="active" class="profile-link">
+      <a
+        [routerLink]="['/profile/following', releaseId]"
+        routerLinkActive="active"
+        class="profile-link"
+      >
         following
+        <span class="count">{{ followingCount }}</span>
       </a>
     </div>
     <hr class="divider" />

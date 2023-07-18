@@ -24,6 +24,10 @@ import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
+import { CollectionsComponent } from './components/collections/collections.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { FollowingComponent } from './components/following/following.component';
+import { CounterService } from './services/counter.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,9 @@ import { SearchComponent } from './components/search/search.component';
     ProfileComponent,
     AlbumComponent,
     SearchComponent,
+    CollectionsComponent,
+    WishlistComponent,
+    FollowingComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,12 @@ import { SearchComponent } from './components/search/search.component';
     FormsModule,
     RouterModule,
   ],
-  providers: [UserService, DiscogsService, FirebaseStorageService],
+  providers: [
+    UserService,
+    DiscogsService,
+    FirebaseStorageService,
+    CounterService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

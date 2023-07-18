@@ -5,7 +5,10 @@ import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlbumComponent } from './components/album/album.component';
-import { SearchComponent } from './components/search/search.component'; // Importar el nuevo componente
+import { SearchComponent } from './components/search/search.component';
+import { CollectionsComponent } from './components/collections/collections.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { FollowingComponent } from './components/following/following.component';
 
 import {
   canActivate,
@@ -23,6 +26,11 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
+    children: [
+      { path: 'collections/:releaseId', component: CollectionsComponent },
+      { path: 'wishlist/:releaseId', component: WishlistComponent },
+      { path: 'following/:releaseId', component: FollowingComponent },
+    ],
   },
   { path: 'album/:releaseId', component: AlbumComponent },
 ];
