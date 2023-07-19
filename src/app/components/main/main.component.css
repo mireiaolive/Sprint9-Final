@@ -6,7 +6,6 @@
 }
 
 .flex-container {
-  width: 90vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -48,7 +47,7 @@ p {
 
 h3.text-left {
   color: #a136fd;
-  width: 90vw;
+
   text-align: left;
   margin: 0 auto;
   padding: 20px 20px 20px 20px;
@@ -148,4 +147,52 @@ h3.text-left {
   background-color: #fff;
   border: none;
   color: #a136fd;
+}
+
+.flex-black {
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 150px 0px;
+  padding: 0;
+  border: 1px solid black;
+}
+
+.col-8 {
+  overflow-y: auto;
+  height: 450px;
+}
+
+.flex-black img {
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.flex-black h4,
+.flex-black p {
+  text-align: center;
+}
+
+.item {
+  border: 1px solid black;
+  padding: 20px 10px 20px 10px;
+  font-size: 34px;
+  font-weight: 800;
+  color: black;
+  background-color: white;
+  transition: color 0.3s, background-color 0.3s;
+  border-top: none;
+}
+
+.item:hover {
+  color: white;
+  background-color: black;
+}
+
+.row.flex-black {
+  --bs-gutter-x: 0;
 }
