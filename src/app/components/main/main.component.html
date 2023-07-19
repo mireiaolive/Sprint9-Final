@@ -78,19 +78,25 @@
 
   <div class="row flex-black">
     <div class="col-8 d-block">
-      <div class="item">Upcoming Events</div>
-      <div class="item">For fans of Boiler Room</div>
-      <div class="item">What Is a Booking Agent? (Find the Right One)</div>
-      <div class="item">Podcast Andrés (ft. Moodymann)</div>
-      <div class="item">EP Review Temple Rat - The Composition Of Air</div>
-      <div class="item">Special Request - Sliver feat. Novelist</div>
-      <div class="item">Youandewan - Cheap Lust</div>
-      <div class="item">Laurel Halo reveals Atlas, her album in five years</div>
+      <div
+        *ngFor="let release of mainData; let i = index"
+        class="item"
+        (click)="showItemDetails(release)"
+        [ngClass]="{ active: selectedRelease === release }"
+      >
+        {{ release.title }}
+      </div>
     </div>
     <div class="col-4">
-      <img src="ruta_de_la_imagen.jpg" alt="Título de la imagen" />
-      <h4>Título de la imagen</h4>
-      <p>Explicación de la imagen.</p>
+      <img
+        *ngIf="selectedRelease"
+        [src]="selectedRelease.image"
+        alt="Título de la imagen"
+      />
+      <h4 *ngIf="selectedRelease">{{ selectedRelease.title }}</h4>
+      <p *ngIf="selectedRelease">
+        {{ selectedRelease.description }}
+      </p>
     </div>
   </div>
 

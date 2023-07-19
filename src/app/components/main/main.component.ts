@@ -12,6 +12,51 @@ export class MainComponent implements OnInit {
   releaseData: any[] = [];
   isDataLoaded: boolean = false;
   hoveredReleaseIndex: number = -1;
+  mainData: any[] = [
+    {
+      title: 'Upcoming Events',
+      description: 'Description for Upcoming Events',
+      image: '../../../assets/events.jpeg',
+    },
+    {
+      title: 'For fans of Boiler Room',
+      description: 'Description for For fans of Boiler Room',
+      image: '../../../assets/boiler_room.jpg',
+    },
+
+    {
+      title: 'What Is a Booking Agent? (Find the Right One)',
+      description: 'Description for For fans of Boiler Room',
+      image: '../../../assets/booking.jpeg',
+    },
+
+    {
+      title: 'Podcast Andrés (ft. Moodymann)',
+      description: 'Description for For fans of Boiler Room',
+      image: '../../../assets/moodyman.png',
+    },
+    {
+      title: 'EP Review Temple Rat - The Composition Of Air',
+      description: 'Description for For fans of Boiler Room',
+      image: 'ruta_de_la_imagen2.jpg',
+    },
+    {
+      title: 'Special Request - Sliver feat. Novelist',
+      description: 'Description for For fans of Boiler Room',
+      image: 'ruta_de_la_imagen2.jpg',
+    },
+    {
+      title: 'Youandewan - Cheap Lust',
+      description: 'Description for For fans of Boiler Room',
+      image: 'ruta_de_la_imagen2.jpg',
+    },
+    {
+      title: 'Laurel Halo reveals Atlas, her album in five years',
+      description: 'Description for For fans of Boiler Room',
+      image: 'ruta_de_la_imagen2.jpg',
+    },
+  ];
+  selectedRelease: any = null;
 
   constructor(
     private discogsService: DiscogsService,
@@ -60,5 +105,8 @@ export class MainComponent implements OnInit {
     this.counterService.incrementWishlistCount();
     this.counterService.setClickedRelease(release); // Use the release object
     this.router.navigateByUrl(`/profile/wishlist/${release.id}`);
+  }
+  showItemDetails(release: any) {
+    this.selectedRelease = this.selectedRelease === release ? null : release;
   }
 }
