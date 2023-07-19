@@ -1,1 +1,12 @@
-<p>hello wishlist</p>
+<div class="row flex-container">
+  <h2>Wishlist</h2>
+  <div *ngIf="clickedRelease" class="flex-item">
+    <img [src]="clickedRelease.cover_image" alt="Release Image" />
+    <p>
+      {{ clickedRelease.title }} {{ clickedRelease.artists
+      }}<strong> Format: </strong>{{ clickedRelease.format }} in
+      {{ clickedRelease.year }}, {{ clickedRelease.country }}.
+      <strong>Genres: </strong>{{ clickedRelease.genre }}
+    </p>
+  </div>
+</div>

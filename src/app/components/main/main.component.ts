@@ -44,7 +44,7 @@ export class MainComponent implements OnInit {
         (release) => release.id === releaseId
       );
       if (clickedRelease) {
-        this.counterService.setClickedRelease(clickedRelease); // Establecer el clickedRelease seleccionado
+        this.counterService.setClickedRelease(clickedRelease); // Use the release object
         this.router.navigateByUrl(`/album/${releaseId}`);
       }
     }
@@ -52,13 +52,13 @@ export class MainComponent implements OnInit {
 
   handleBuyNowClick(release: any) {
     this.counterService.incrementCollectionsCount();
-    this.counterService.setClickedRelease(release); // Establecer el clickedRelease seleccionado
+    this.counterService.setClickedRelease(release); // Use the release object
     this.router.navigateByUrl(`/profile/collections/${release.id}`);
   }
 
   handleWishlistClick(release: any) {
     this.counterService.incrementWishlistCount();
-    this.counterService.setClickedRelease(release); // Establecer el clickedRelease seleccionado
+    this.counterService.setClickedRelease(release); // Use the release object
     this.router.navigateByUrl(`/profile/wishlist/${release.id}`);
   }
 }

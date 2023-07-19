@@ -8,7 +8,7 @@ export class CounterService {
   private wishlistCount: number = 0;
   private followingCount: number = 0;
   private clickedRelease: any | null = null;
-  private clickedReleaseId: string | null = null; // Add clickedReleaseId property
+  private clickedReleaseId: string | null = null;
 
   constructor() {}
 

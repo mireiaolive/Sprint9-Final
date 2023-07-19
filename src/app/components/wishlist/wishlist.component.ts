@@ -1,5 +1,3 @@
-// wishlist.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { CounterService } from '../../services/counter.service';
 
@@ -9,11 +7,11 @@ import { CounterService } from '../../services/counter.service';
   styleUrls: ['./wishlist.component.css'],
 })
 export class WishlistComponent implements OnInit {
-  clickedReleaseId: string | null = null;
+  clickedRelease: any | null = null;
 
   constructor(private counterService: CounterService) {}
 
-  ngOnInit() {
-    this.clickedReleaseId = this.counterService.getClickedReleaseId();
+  ngOnInit(): void {
+    this.clickedRelease = this.counterService.getClickedRelease();
   }
 }
