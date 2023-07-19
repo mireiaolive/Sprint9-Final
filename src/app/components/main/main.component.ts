@@ -38,22 +38,22 @@ export class MainComponent implements OnInit {
     {
       title: 'EP Review Temple Rat - The Composition Of Air',
       description: 'Description for For fans of Boiler Room',
-      image: 'ruta_de_la_imagen2.jpg',
+      image: '../../../assets/composition.jpg',
     },
     {
       title: 'Special Request - Sliver feat. Novelist',
       description: 'Description for For fans of Boiler Room',
-      image: 'ruta_de_la_imagen2.jpg',
+      image: '../../../assets/silver.jpg',
     },
     {
       title: 'Youandewan - Cheap Lust',
       description: 'Description for For fans of Boiler Room',
-      image: 'ruta_de_la_imagen2.jpg',
+      image: '../../../assets/youandewan.jpg',
     },
     {
       title: 'Laurel Halo reveals Atlas, her album in five years',
       description: 'Description for For fans of Boiler Room',
-      image: 'ruta_de_la_imagen2.jpg',
+      image: '../../../assets/laurel-halo.jpg',
     },
   ];
   selectedRelease: any = null;
