@@ -68,6 +68,11 @@ export class MainComponent implements OnInit {
     if (!this.isDataLoaded) {
       this.getReleaseData();
     }
+    this.selectedRelease = this.mainData[0];
+
+    if (!this.isDataLoaded) {
+      this.getReleaseData();
+    }
   }
 
   getReleaseData() {
