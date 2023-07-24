@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     this.userService
       .register(this.formReg.value)
       .then(() => {
-        this.router.navigate(['login']);
+        this.router.navigate(['profile']);
       })
       .catch((error) => console.log(error));
   }

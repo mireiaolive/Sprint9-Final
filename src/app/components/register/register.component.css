@@ -2,3 +2,11 @@
   margin: 0 auto;
   width: 30%;
 }
+
+.submit {
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px 15px 5px 15px;
+}

@@ -23,7 +23,7 @@ export class DiscogsService {
       .set('type', 'release')
       .set('sort', 'year')
       .set('sort_order', 'desc')
-      .set('per_page', '24');
+      .set('per_page', '15');
 
     return this.http.get(url, { headers, params });
   }
