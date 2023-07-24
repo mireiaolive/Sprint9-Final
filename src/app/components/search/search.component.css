@@ -17,8 +17,8 @@
 
 .flex-item {
   position: relative;
-  width: 200px;
-  flex: 0 0 180px;
+  width: 280px;
+  flex: 0 0 280px;
   text-align: left;
   line-height: 1.5;
   flex-direction: column;
@@ -36,8 +36,8 @@
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
 }
 
 p {
@@ -76,14 +76,14 @@ h3.text-left {
   margin: 0;
   cursor: pointer;
   position: absolute;
-  top: 45px;
-  left: 20px;
+  top: 70px;
+  left: 40px;
 }
 
 .buttons .button {
   display: block;
   color: white;
-  font-size: 24px;
+  font-size: 34px;
   font-weight: 600;
   text-decoration: none;
 }
