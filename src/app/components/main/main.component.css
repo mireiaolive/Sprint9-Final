@@ -207,3 +207,22 @@ h3.text-left {
   object-fit: contain;
   margin-bottom: 20px;
 }
+
+.carousel-image-overlay {
+  position: relative;
+}
+
+.carousel-caption {
+  line-height: 0.9;
+  position: absolute;
+  top: 26%;
+  right: 20%;
+  color: white;
+  text-align: center;
+}
+
+.carousel-caption p {
+  text-align: left;
+  font-size: 98px;
+  font-weight: 600;
+}
